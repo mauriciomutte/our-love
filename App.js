@@ -1,12 +1,20 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { differenceInDays } from 'date-fns';
 
 export default function App() {
+  function calculateDate() {
+    return differenceInDays(
+      new Date(),
+      new Date(2018, 2, 2)
+    )
+  }
+
   return (
     <View style={styles.container}>
       <Text style={[styles.text, styles.title]}>Estamos juntos há:</Text>
       <Text style={[styles.text, styles.days]}>
-        587
+        {calculateDate()}
         <Text style={[styles.text, styles.small]}>dias</Text>
       </Text>
     </View>
